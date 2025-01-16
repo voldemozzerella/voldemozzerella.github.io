@@ -4,8 +4,8 @@ $font-family: "PT Sans", -apple-system, "Helvetica Neue", "Segoe UI", "Roboto", 
 $heading-weight: 600 !default
 $line-height: 1.6 !default
 $link-color: #68f !default
-$dark: #c997af !default
-$light: #fcd8e9 !default
+$dark: $dark !default
+$light: $light !default
 
 @function reduce ($percent)
   @return rgba(mix($dark, $light), $percent / 100)
