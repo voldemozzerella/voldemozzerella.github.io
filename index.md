@@ -1,8 +1,7 @@
 ---
 layout: page 
-title: "about me"
 ---
-
+##about me
 Hi ! i'm pusti, a junior studying computer science and data science at uw madison.
 
 I enjoy diving deep into low-level programming and systems design, understanding how things work at their core, and optimizing for performance. I’m passionate about working on creative projects, from coding interactive applications to designing sleek user interfaces. 
