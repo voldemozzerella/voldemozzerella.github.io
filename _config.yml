@@ -3,7 +3,7 @@ author: "pusti"
 description: "uw madison cs/ds; aspiring asparagus hater"
 permalink: /:title/
 lang: "en"
-excerpt_separator: "excerpt_separator: <!--more-->"
+excerpt_separator: "<!--more-->"
 date_format: "%B %d, %Y"
 
 # Layout
