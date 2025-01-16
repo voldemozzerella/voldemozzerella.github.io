@@ -7,21 +7,21 @@ html
   background: #a8b5c2  //bg color in light mode
   padding: 0 calc(38% - 22em)
 
-body
-  box-shadow: 0 0 .3em lighten($dark, 65%)
+// body
+//   box-shadow: 0 0 .3em lighten($dark, 65%)
 
-body > header, body > footer
-  background: lighten($dark, 5%)
-  color: $light
+// body > header, body > footer
+//   background: lighten($dark, 5%)
+//   color: $light
 
 @media (min-width: 32em)
   body > header, body > article, body > footer
-    padding: 1.75em calc(22% - 6em)
+    padding: 1.25em calc(22% - 6em)
 
 @media (prefers-color-scheme: dark)
   html
     background: #2e4265     //bg color in dark mode
   body > header, body > footer
     background: $dark
-  body, body > header, body > footer
-    box-shadow: 0 0 0 1px lighten($dark, 8%)
+  // body, body > header, body > footer
+  //   box-shadow: 0 0 0 1px lighten($dark, 8%)
