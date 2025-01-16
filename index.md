@@ -1,5 +1,6 @@
 ---
 layout: page 
+title: ""
 ---
 ## about me
 Hi ! i'm pusti, a junior studying computer science and data science at uw madison.
