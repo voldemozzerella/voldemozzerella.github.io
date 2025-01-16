@@ -1,9 +1,6 @@
 ---
 layout: page 
-title: "                    ╱|、
-                          (˚ˎ 。7  
-                           |、˜〵          
-                          じしˍ,)ノ"
+title: "⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖"
 ---
 ## about me
 Hi ! i'm pusti, a junior studying computer science and data science at uw madison.
