@@ -1,5 +1,14 @@
 <article>
   <header><h1>{{ include.title | default: page.title }}</h1></header>
+  <style>
+    .archive li {
+      border: 0.5px solid #ccc;
+      border-radius: 5px;
+      padding: 1em;
+      margin-bottom: 1.5em;
+      background: #f9f9f9;
+    }
+  </style>
   <ul class="archive">
     {% for post in site.posts %}
     <li>
