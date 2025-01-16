@@ -20,18 +20,36 @@ body > article
   padding: 2em 0
   max-width: 50em
 
+// aside
+//   display: block!important
+//   position: fixed
+//   overflow: auto
+//   background: darken($dark, 2%)
+//   color: $dark   //changes the top and bottom color
+//   padding: 1.25em
+//   width: 100%
+//   top: 0
+//   bottom: 0
+//   left: 0
+//   z-index: 1000 // Ensure it stays above other elements
+
 aside
   display: block!important
   position: fixed
   overflow: auto
-  background: darken($dark, 2%)
-  color: $dark   //changes the top and bottom color
+  background: #a8b5c2 // Soft gray for light mode
+  color: $dark       // Dark text for light mode
   padding: 1.25em
   width: 100%
   top: 0
   bottom: 0
   left: 0
-  z-index: 1000 // Ensure it stays above other elements
+
+@media (prefers-color-scheme: dark)
+  aside
+    background: darken($dark, 2%) // Dark background for dark mode
+    color: $light                 // Light text for dark mode
+
 
 
 article header h1
