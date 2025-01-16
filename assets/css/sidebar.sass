@@ -20,17 +20,45 @@ body > article
   padding: 2em 0
   max-width: 50em
 
+// aside
+//   display: block!important
+//   position: fixed
+//   overflow: auto
+//   background: darken($dark, 2%)
+//   color: $dark   //changes the top and bottom color
+//   padding: 1.25em
+//   width: 100%
+//   top: 0
+//   bottom: 0
+//   left: 0
+//   z-index: 1000 // Ensure it stays above other elements
 aside
   display: block!important
   position: fixed
-  overflow: auto
   background: darken($dark, 2%)
-  color: #2E4265   //changes the top and bottom color
-  padding: 2.25em
-  width: 12em
-  top: 0
+  color: #2E4265
+  width: 12em // Sidebar width
+  top: 4em // Below the top bar
   bottom: 0
   left: 0
+  overflow: auto
+  z-index: 900
+
+.top-bar
+  position: fixed
+  width: 100%
+  top: 0
+  left: 0
+  height: 4em
+  background: darken($dark, 2%)
+  color: #fff
+  padding: 1em 2em
+  z-index: 1000
+
+body
+  margin: 0 0 0 12em
+  padding-top: 4em
+
 
 article header h1
   font-size: 2em
