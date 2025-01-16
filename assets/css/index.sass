@@ -3,23 +3,32 @@
 
 @import index, font, basic, layout, classes
 
+html, body {
+  background: #fcd8e9; /* Baby pink */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 @media (min-width: 40em)
   body > header, body > article, body > footer
     padding: 1.75em calc(40% - 17em)
 
 {% if site.minimal %}
-
 body > header
   background: $dark
   color: $light
   border-bottom: 1px solid reduce(14)
-
 {% else %}
-
 body > header
   box-shadow: 0 0 .6em rgba($dark, 0.04)
   border-bottom: 1px solid reduce(14)
-
 {% endif %}
 
 body > footer
