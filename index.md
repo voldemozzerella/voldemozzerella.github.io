@@ -3,7 +3,7 @@ layout: page
 title: "⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖"
 ---
 ## about me
-Hi ! i'm pusti, a junior studying computer science and data science at uw madison.
+Hi ! i'm [pusti](https://www.linkedin.com/in/pusti-jesrani-5099b7241/), a junior studying computer science and data science at uw madison.
 
 I enjoy diving deep into low-level programming and systems design, understanding how things work at their core, and optimizing for performance. I’m passionate about working on creative projects, from coding interactive applications to designing sleek user interfaces. 
 
