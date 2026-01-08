@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pusti Jesrani</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero" id="top">
+        <div class="hero__content">
+          <p class="eyebrow">Hello, I’m</p>
+          <h1>Pusti Jesrani</h1>
+          <p class="hero__subtitle">
+            Senior CS + DS student at UW-Madison that loves building clean and human-first interfaces.
+            I’m also interested in computational biology and the algorithms and
+            simulations that support medical insight.
+          </p>
+          <div class="hero__meta">
+            <span>Madison, WI</span>
+            <a href="mailto:pbjmct@gmail.com">pbjmct@gmail.com</a>
+            <a href="https://www.linkedin.com/in/pusti-jesrani-5099b7241" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+          <div class="hero__cta">
+            <a class="btn ghost" href="#projects">View projects</a>
+            <a class="btn ghost" href="https://drive.google.com/file/d/12NqimTVYR9rRq7HhTc9LLY8IQrZR2CWO/view?usp=share_link" target="_blank" rel="noreferrer">
+              Resume PDF
+            </a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <img class="pixel-cat" src="assets/pixel-cat.gif" alt="Pixelated blue cat animation" />
+        </div>
+      </header>
+
+      <main>
+        <section class="section" id="interests">
+          <div class="section__header">
+            <h2>Interests</h2>
+          </div>
+          <div class="pill-grid">
+            <span>Frontend engineering</span>
+            <span>Human-centered UI</span>
+            <span>Computational biology</span>
+            <span>Bioinformatics pipelines</span>
+            <span>Data visualization</span>
+            <span>Machine learning for health</span>
+          </div>
+        </section>
+
+        <section class="section" id="coursework">
+          <div class="section__header">
+            <h2>Relevant Coursework</h2>
+          </div>
+          <div class="pill-grid">
+            <span>Data Structures</span>
+            <span>Algorithms</span>
+            <span>Operating Systems</span>
+            <span>Machine Learning</span>
+            <span>Linear Algebra</span>
+            <span>Statistics</span>
+            <span>Bioinformatics</span>
+            <span>User Interfaces</span>
+            <span>Data Visualization</span>
+          </div>
+        </section>
+
+        <section class="section" id="experience">
+          <div class="section__header">
+            <h2>Experience</h2>
+          </div>
+          <div class="card-grid">
+            <article class="card">
+              <h3>Undergraduate Research Assistant</h3>
+              <p class="card__meta">SAHA Lab, Wisconsin Institute for Discovery</p>
+              <ul>
+                <li>Built high-throughput bioinformatics pipelines across 10+ TB datasets.</li>
+                <li>Optimized minimap2 for long-read alignment, cutting runtime by 40%.</li>
+                <li>Improved CRISPResso2 mutation detection accuracy by 25%.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>Computer Science Intern</h3>
+              <p class="card__meta">UW-Madison College of Agricultural & Life Sciences</p>
+              <ul>
+                <li>Shipped an EPA Mitigation Menu tool in Svelte + TypeScript.</li>
+                <li>Rebuilt a data UI into a responsive framework for mobile access.</li>
+                <li>Automated validation + visualization for 100K+ field trial records.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>Academic Mentor</h3>
+              <p class="card__meta">Center for Academic Excellence, UW—Madison</p>
+              <ul>
+                <li>Led 50+ tutoring sessions in Calculus II and intro Java.</li>
+                <li>Designed problem sets and resources that raised exam scores by ~15%.</li>
+                <li>Coached analytical reasoning and effective study habits.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="extracurriculars">
+          <div class="section__header">
+            <h2>Extracurriculars</h2>
+          </div>
+          <div class="card-grid">
+            <article class="card">
+              <h3>Coordinator, Undergraduate Projects Lab</h3>
+              <ul>
+                <li>Co-organized one of the largest hackathons in the Midwest.</li>
+                <li>Supported student teams with project planning and demo prep.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>Vice President, Sheepshead Club</h3>
+              <ul>
+                <li>Organized weekly meetings for up to 50 players.</li>
+                <li>Built a welcoming community around a Wisconsin classic.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="projects">
+          <div class="section__header">
+            <h2>Projects</h2>
+          </div>
+          <div class="card-grid">
+            <article class="card">
+              <h3>Lunchbox — Social Restaurant Ranking App</h3>
+              <p class="card__meta">React-Bootstrap · HTML · CSS</p>
+              <p>
+                Designed an interactive platform for collaborative restaurant lists, with
+                reactions, comments, and privacy controls.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Unix Shell</h3>
+              <p class="card__meta">C · Linux</p>
+              <p>
+                Implemented a lightweight shell with process creation, piping, and variable
+                substitution plus built-in error handling.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Global vs US COVID-19 Data Analysis</h3>
+              <p class="card__meta">R · Python</p>
+              <p>
+                Modeled COVID-19 time series and compared trends across countries with
+                regression + visualization.
+              </p>
+            </article>
+          </div>
+        </section>
+
+      </main>
+
+      <footer class="footer">
+        <p>© 2025 Pusti Jesrani. Built for GitHub Pages.</p>
+        <a href="#top">Back to top</a>
+      </footer>
+    </div>
+  </body>
+</html>
