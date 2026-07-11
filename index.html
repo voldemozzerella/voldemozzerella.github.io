@@ -312,6 +312,24 @@
         });
       });
 
+      // Tenor embed fallback: if tenor iframe doesn't load, replace embed with a local fallback
+      const tenorWrapper = document.querySelector('.tenor-gif-embed');
+      if (tenorWrapper) {
+        setTimeout(() => {
+          // Tenor script usually injects an iframe; if none exists, use fallback
+          if (!tenorWrapper.querySelector('iframe')) {
+            const fallback = document.createElement('img');
+            fallback.src = 'assets/pixel-cat.gif';
+            fallback.alt = 'Penguin (fallback)';
+            fallback.style.width = '160px';
+            fallback.style.height = '160px';
+            fallback.style.objectFit = 'contain';
+            fallback.className = 'profile-penguin-fallback';
+            tenorWrapper.replaceWith(fallback);
+          }
+        }, 1200);
+      }
+
       const projectCards = document.querySelectorAll('.project-card');
       const projectCarousel = document.getElementById('projectCarousel');
       const highlightCarousel = document.getElementById('highlightCarousel');
@@ -350,9 +368,28 @@
         modalSummary.textContent = card.dataset.summary;
         modalDetail.textContent = card.dataset.detail;
         modalTag.textContent = card.dataset.tag;
-        modalPreview.innerHTML = card.querySelector('.project-card__face--front').innerHTML;
+        // clone the front face node to avoid moving original DOM or duplicating ids
+        const front = card.querySelector('.project-card__face--front');
+        if (front) {
+          modalPreview.innerHTML = '';
+          const clone = front.cloneNode(true);
+          // remove any interactive ids that might conflict
+          clone.querySelectorAll('[id]').forEach((n) => n.removeAttribute('id'));
+          modalPreview.appendChild(clone);
+        } else {
+          modalPreview.innerHTML = card.querySelector('.preview')?.innerHTML || '';
+        }
         modal.hidden = false;
       }
+
+      // Delegated handler: clicking gifs inside modalPreview should open gif modal
+      modalPreview.addEventListener('click', (e) => {
+        const gif = e.target.closest('.preview__gif');
+        if (gif) {
+          gifModalImg.src = gif.src;
+          gifModal.hidden = false;
+        }
+      });
 
       projectCards.forEach((card) => {
         const gif = card.querySelector('.preview__gif');
