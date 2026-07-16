@@ -3,460 +3,533 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pusti Jesrani | UX/UI Design Portfolio</title>
+    <title>Pusti Jesrani | Hire Me Map</title>
     <meta
       name="description"
-      content="A Netflix-inspired UX/UI portfolio for interactive kiosk and product design opportunities."
+      content="A playful boat-driven portfolio where you sail to islands to learn about Pusti Jesrani's work, background, and contact details."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />    <script type=\"text/javascript\" async src=\"https://tenor.com/embed.js\"></script>  </head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
   <body>
-    <div class="profile-screen" id="profileScreen">
-      <div class="profile-card">
-        <p class="eyebrow">UX/UI Designer</p>
-        <h1>Who’s watching?</h1>
-        <p class="profile-card__copy">
-          I design touch-first experiences that turn foot traffic into engaged customers. Ready to bring your interactive kiosk concept to life with strong user flows, clean visuals, and Figma-ready prototypes.
+    <div class="start-screen" id="startScreen">
+      <div class="start-card">
+        <p class="start-card__kicker">World 1 • Hire Me Harbor</p>
+        <h1>Press Start. Hire Me.</h1>
+        <p class="start-card__copy">
+          This portfolio works like a game map. Launch the boat, sail to islands, and see the real story behind my work.
         </p>
-        <div class="profile-card__visual">
-          <div class="tenor-gif-embed" data-postid="1156781467135970743" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/penguin-penguin-dancing-kawaii-cute-dance-gif-1156781467135970743">Penguin Dancing</a></div>
+
+        <div class="start-tips">
+          <div class="tip-card">
+            <span class="tip-card__label">Tip 01</span>
+            <p>Click an island to auto-sail there.</p>
+          </div>
+          <div class="tip-card">
+            <span class="tip-card__label">Tip 02</span>
+            <p>Use arrow keys or WASD if you want to steer it yourself.</p>
+          </div>
+          <div class="tip-card">
+            <span class="tip-card__label">Tip 03</span>
+            <p>Dock anywhere close to shore and open a story.</p>
+          </div>
         </div>
-        <div class="profile-grid">
-          <button class="profile-option" data-profile="recruiter">
-            <span class="profile-option__avatar">🎯</span>
-            <strong>Business</strong>
-            <span>Lead-focused</span>
-          </button>
-          <button class="profile-option" data-profile="designer">
-            <span class="profile-option__avatar">🎨</span>
-            <strong>Design</strong>
-            <span>Process-driven</span>
-          </button>
-          <button class="profile-option" data-profile="explorer">
-            <span class="profile-option__avatar">▶️</span>
-            <strong>Play</strong>
-            <span>Live interaction</span>
-          </button>
+
+        <button class="button button--primary" id="startButton" type="button">Start Game</button>
+
+        <div class="loading-panel hidden" id="loadingPanel" aria-live="polite">
+          <div class="loading-boat" aria-hidden="true">
+            <div class="loading-boat__wake"></div>
+            <div class="loading-boat__body"></div>
+            <div class="loading-boat__mast"></div>
+            <div class="loading-boat__flag"></div>
+          </div>
+          <p class="loading-panel__title" id="loadingTitle">Loading hireable captain...</p>
+          <p class="loading-panel__copy" id="loadingCopy">Sharpening case studies, polishing UI, warming up boat engine.</p>
+          <div class="loading-bar" aria-hidden="true">
+            <div class="loading-bar__fill" id="loadingBarFill"></div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="page" id="mainPage" hidden>
-      <header class="hero" id="top">
-        <div class="hero__content">
-          <div class="hero__chip" id="profileChip">Lead-focused view</div>
-          <p class="eyebrow" id="profileGreeting">Hi, Piper</p>
-          <h1>Pusti Jesrani</h1>
-          <p class="hero__subtitle" id="heroSummary">
-            I design interactive kiosk experiences that guide visitors through your showroom—clear, engaging, and built to convert curiosity into consultations.
-          </p>
-          <p class="hero__detail" id="heroHighlight">
-            Comfortable working independently on pilot projects. I think about user flows, lead capture, and making every touchpoint feel intentional and premium.
-          </p>
-          <div class="hero__meta">
-            <span>Madison, WI</span>
-            <a href="mailto:pbjmct@gmail.com">pbjmct@gmail.com</a>
-            <a href="https://www.linkedin.com/in/pusti-jesrani" target="_blank" rel="noreferrer">LinkedIn</a>
-          </div>
-          <div class="hero__cta">
-            <a class="btn primary" href="#projects">View portfolio</a>
-            <a
-              class="btn ghost"
-              href="https://drive.google.com/file/d/1_Xm1vW1rwdmHgojCgGaMHQRLCWHJ_OqJ/view?usp=share_link"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Resume PDF
-            </a>
+    <div class="page hidden" id="page">
+      <header class="hud">
+        <div class="hud__brand">
+          <div class="hud__badge">PJ</div>
+          <div>
+            <p class="hud__eyebrow">Playable portfolio</p>
+            <h1>Pusti Jesrani</h1>
           </div>
         </div>
-        <div class="hero__visual" aria-hidden="true">
-          <div class="hero__visual-card">
-            <div class="hero__visual-top">
-              <span class="hero__badge">Now streaming</span>
-              <span class="hero__badge hero__badge--soft">UX/UI</span>
-            </div>
-            <div class="hero__visual-screen">
-              <div class="hero__visual-pill"></div>
-              <div class="hero__visual-pill hero__visual-pill--small"></div>
-              <img class="pixel-cat" src="assets/pixel-cat.gif" alt="Pixelated blue cat animation" />
-            </div>
-          </div>
-        </div>
+        <p class="hud__status">Now sailing for UX/UI, product, and interactive experience roles.</p>
+        <button class="button button--secondary" id="restartButton" type="button">Restart</button>
       </header>
 
-      <main>
-        <section class="section" id="highlights">
-          <div class="section__header">
-            <span class="badge">For ZCurtains</span>
-            <h2>What I bring to your pilot</h2>
-            <p>A complete design-to-prototype workflow that captures leads and reflects your brand.</p>
-          </div>
-          <div class="carousel-nav carousel-nav--compact" aria-label="Highlight carousel controls">
-            <button class="carousel-nav__btn" data-target="highlightCarousel" data-dir="prev" type="button" aria-label="Scroll highlights left">←</button>
-            <button class="carousel-nav__btn" data-target="highlightCarousel" data-dir="next" type="button" aria-label="Scroll highlights right">→</button>
-          </div>
-          <div class="carousel carousel--highlights" id="highlightCarousel" aria-label="Design highlights">
-            <article class="mini-card">
-              <span class="mini-card__eyebrow">01</span>
-              <h3>Lead-generating flows</h3>
-              <p>User journeys that move visitors from curiosity → product education → consultation booking. Designed for high-traffic spaces with limited attention.</p>
-            </article>
-            <article class="mini-card">
-              <span class="mini-card__eyebrow">02</span>
-              <h3>Touch-first design</h3>
-              <p>Large hit targets, clear visual hierarchy, zero confusion. Every screen designed so someone on the showroom floor gets it in seconds.</p>
-            </article>
-            <article class="mini-card">
-              <span class="mini-card__eyebrow">03</span>
-              <h3>Figma → Ready</h3>
-              <p>Clickable prototypes you can test immediately. I design systems, not static mockups—ready for iteration based on your feedback.</p>
-            </article>
-            <article class="mini-card">
-              <span class="mini-card__eyebrow">04</span>
-              <h3>Independent driver</h3>
-              <p>I own the vision. I'll synthesize your ideas, push back thoughtfully, and move the prototype forward without needing constant direction.</p>
-            </article>
-          </div>
-        </section>
+      <main class="game-shell">
+        <section class="map-card">
+          <div class="map-frame">
+            <div class="map-backdrop" aria-hidden="true">
+              <div class="sun"></div>
+              <div class="cloud cloud--one"></div>
+              <div class="cloud cloud--two"></div>
+              <div class="cloud cloud--three"></div>
+              <div class="wave wave--one"></div>
+              <div class="wave wave--two"></div>
+              <div class="wave wave--three"></div>
+            </div>
 
-        <section class="section" id="projects">
-          <div class="section__header">
-            <span class="badge--top badge">Top 10</span>
-            <h2>Featured work</h2>
-            <p>Click a card to flip it, then open the full story for each concept.</p>
-          </div>
-          <div class="carousel-nav" aria-label="Project carousel controls">
-            <button class="carousel-nav__btn" data-target="projectCarousel" data-dir="prev" type="button" aria-label="Scroll projects left">←</button>
-            <button class="carousel-nav__btn" data-target="projectCarousel" data-dir="next" type="button" aria-label="Scroll projects right">→</button>
-          </div>
-          <div class="carousel carousel--projects" id="projectCarousel" aria-label="Featured projects">
-            <article
-              class="project-card"
-              role="button"
-              tabindex="0"
-              aria-label="Flip EPA Mitigation Menu card"
-              data-title="EPA Mitigation Menu Tool"
-              data-summary="Rebuilt a complex agricultural data interface into a mobile-responsive UI, helping farmers navigate field trial data and mitigation options."
-              data-detail="Shipped in Svelte + TypeScript. The redesign cut decision-making time by 40% through clearer information hierarchy, better visual grouping, and touch-friendly controls. This taught me how to make complex information feel approachable—exactly what a showroom kiosk needs."
-              data-tag="Svelte · Data UI · Mobile-first"
-              data-preview-class="preview--portfolio"
-            >
-              <div class="project-card__inner">
-                <div class="project-card__face project-card__face--front">
-                  <div class="preview preview--portfolio">
-                    <img class="preview__gif" src="assets/pixel-cat.gif" alt="Data interface design" />
-                  </div>
-                  <div class="project-card__body">
-                    <h3>EPA Mitigation Menu (UW-Madison)</h3>
-                    <p class="project-card__meta">Data UX · Responsive design</p>
-                    <p>Transformed dense agricultural data into a framework farmers actually want to use.</p>
-                  </div>
-                </div>
-                <div class="project-card__face project-card__face--back">
-                  <div class="project-card__back">
-                    <span class="project-card__back-badge">Case study</span>
-                    <h3>Designed for fast decisions</h3>
-                    <p>The interface now helps users scan field data, compare options, and choose confidently without overload.</p>
-                    <button class="project-card__detail-btn" type="button">View details</button>
-                  </div>
-                </div>
+            <div class="map" id="map" aria-label="Portfolio island map">
+              <div class="sea-lane sea-lane--north"></div>
+              <div class="sea-lane sea-lane--west"></div>
+              <div class="sea-lane sea-lane--east"></div>
+              <div class="sea-lane sea-lane--south"></div>
+              <div class="sea-lane sea-lane--middle"></div>
+
+              <button class="island island--projects" data-island="projects" type="button">
+                <span class="island__shape island__shape--projects"></span>
+                <span class="island__label">Project Cove</span>
+                <span class="island__sub">The work</span>
+              </button>
+
+              <button class="island island--about" data-island="about" type="button">
+                <span class="island__shape island__shape--about"></span>
+                <span class="island__label">About Isle</span>
+                <span class="island__sub">Who I am</span>
+              </button>
+
+              <button class="island island--process" data-island="process" type="button">
+                <span class="island__shape island__shape--process"></span>
+                <span class="island__label">Process Point</span>
+                <span class="island__sub">How I think</span>
+              </button>
+
+              <button class="island island--play" data-island="play" type="button">
+                <span class="island__shape island__shape--play"></span>
+                <span class="island__label">Campus Key</span>
+                <span class="island__sub">Leadership</span>
+              </button>
+
+              <button class="island island--contact" data-island="contact" type="button">
+                <span class="island__shape island__shape--contact"></span>
+                <span class="island__label">Hire Me Bay</span>
+                <span class="island__sub">Contact</span>
+              </button>
+
+              <div class="dock dock--projects" aria-hidden="true"></div>
+              <div class="dock dock--about" aria-hidden="true"></div>
+              <div class="dock dock--process" aria-hidden="true"></div>
+              <div class="dock dock--play" aria-hidden="true"></div>
+              <div class="dock dock--contact" aria-hidden="true"></div>
+
+              <div class="boat" id="boat" aria-hidden="true">
+                <div class="boat__shadow"></div>
+                <div class="boat__wake"></div>
+                <div class="boat__hull"></div>
+                <div class="boat__deck"></div>
+                <div class="boat__cabin"></div>
+                <div class="boat__mast"></div>
+                <div class="boat__flag"></div>
               </div>
-            </article>
+            </div>
+          </div>
 
-            <article
-              class="project-card project-card--lunchbox"
-              role="button"
-              tabindex="0"
-              aria-label="Flip Lunchbox Social Discovery card"
-              data-title="Lunchbox: Social Restaurant Discovery"
-              data-summary="Designed an interactive social platform for restaurant discovery with collaborative lists, reactions, and privacy controls."
-              data-detail="Built in React with a focus on card-based UI, smooth interactions, and a calm visual rhythm. The key lesson: simple visual systems + clear CTAs = better engagement. For a showroom kiosk, this means designing with the same restraint—every UI element earns its place."
-              data-tag="React · Card UI · Interaction design"
-              data-preview-class="preview--lunchbox"
-            >
-              <div class="project-card__inner">
-                <div class="project-card__face project-card__face--front">
-                  <div class="preview preview--lunchbox">
-                    <img class="preview__gif" src="assets/pixel-cat.gif" alt="Social UI design" />
-                  </div>
-                  <div class="project-card__body">
-                    <h3>Lunchbox Social Discovery</h3>
-                    <p class="project-card__meta">Social UX · React · Design systems</p>
-                    <p>Collaborative product discovery with clean visuals and strong interaction patterns.</p>
-                  </div>
-                </div>
-                <div class="project-card__face project-card__face--back">
-                  <div class="project-card__back project-card__back--lunchbox">
-                    <span class="project-card__back-badge">Case study</span>
-                    <h3>Built for social momentum</h3>
-                    <p>Every interaction was tuned to feel calm, responsive, and easy to scan—perfect for guiding people through a rich experience.</p>
-                    <button class="project-card__detail-btn" type="button">View details</button>
-                  </div>
-                </div>
-              </div>
-            </article>
+          <div class="map-footer">
+            <p id="statusText">Click an island to sail there, or steer the boat yourself.</p>
           </div>
         </section>
 
-        <section class="section" id="about">
-          <div class="section__header">
-            <span class="badge">About me</span>
-            <h2>Why I'm excited about this project</h2>
-            <p>I love designing for real spaces with real constraints.</p>
+        <aside class="panel" id="panel" aria-live="polite">
+          <div class="panel__top">
+            <div>
+              <p class="panel__eyebrow" id="panelEyebrow">Ready to sail</p>
+              <h2 id="panelTitle">Pick an island</h2>
+            </div>
+            <button class="button button--secondary button--small" id="closePanel" type="button">Close</button>
           </div>
-          <div class="carousel" aria-label="About me">
-            <article class="mini-card mini-card--wide">
-              <h3>I think in user flows</h3>
-              <p>From my research work at SAHA Lab, I've learned to trace how data moves and how decisions get made. For your kiosk, that means designing the journey a visitor takes from first impression to "I want to book a consultation."</p>
-            </article>
-            <article class="mini-card mini-card--wide">
-              <h3>I move fast on pilots</h3>
-              <p>I mentored 50+ students and organized hackathons—I'm comfortable with ambiguity, iterating on feedback, and shipping concepts that feel polished without needing months of refinement.</p>
-            </article>
-            <article class="mini-card mini-card--wide">
-              <h3>I obsess over interface clarity</h3>
-              <p>Every pixel should serve a purpose. I design systems that scale, not one-off mockups. The EPA tool taught me that constraints spark creativity—limited screen space, high-traffic use, quick decision-making. This is exactly what a showroom kiosk is.</p>
-            </article>
-          </div>
-        </section>
+
+          <p class="panel__description" id="panelDescription">
+            I made this feel like a game on purpose. It says more about how I think than another plain scrolling portfolio ever could.
+          </p>
+
+          <div class="panel__list" id="panelList"></div>
+          <div class="panel__links" id="panelLinks"></div>
+        </aside>
       </main>
-
-      <footer class="footer">
-        <p>© 2026 Pusti Jesrani. Built as a portfolio experience for UX/UI opportunities.</p>
-        <a href="#top">Back to top</a>
-      </footer>
-    </div>
-
-    <div class="modal" id="projectModal" hidden>
-      <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-        <button class="modal__close" id="closeModal" aria-label="Close preview">×</button>
-        <div class="modal__preview" id="modalPreview"></div>
-        <div class="modal__body">
-          <p class="badge badge--modal" id="modalTag">Preview</p>
-          <h3 id="modalTitle">Project title</h3>
-          <p id="modalSummary">Project summary</p>
-          <p class="modal__detail" id="modalDetail">Project detail</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="gif-modal" id="gifModal" hidden>
-      <div class="gif-modal__overlay" id="gifOverlay"></div>
-      <div class="gif-modal__container">
-        <button class="gif-modal__close" id="closeGifModal" aria-label="Close preview">×</button>
-        <div class="gif-modal__content">
-          <img class="gif-modal__img" id="gifModalImg" src="" alt="Project preview" />
-        </div>
-      </div>
     </div>
 
     <script>
-      const profileScreen = document.getElementById('profileScreen');
-      const mainPage = document.getElementById('mainPage');
-      const profileButtons = document.querySelectorAll('.profile-option');
-      const profileChip = document.getElementById('profileChip');
-      const profileGreeting = document.getElementById('profileGreeting');
-      const heroSummary = document.getElementById('heroSummary');
-      const heroHighlight = document.getElementById('heroHighlight');
+      const startScreen = document.getElementById('startScreen');
+      const page = document.getElementById('page');
+      const startButton = document.getElementById('startButton');
+      const restartButton = document.getElementById('restartButton');
+      const closePanelButton = document.getElementById('closePanel');
+      const loadingPanel = document.getElementById('loadingPanel');
+      const loadingTitle = document.getElementById('loadingTitle');
+      const loadingCopy = document.getElementById('loadingCopy');
+      const loadingBarFill = document.getElementById('loadingBarFill');
+      const boat = document.getElementById('boat');
+      const islands = Array.from(document.querySelectorAll('.island'));
+      const statusText = document.getElementById('statusText');
+      const panel = document.getElementById('panel');
+      const panelEyebrow = document.getElementById('panelEyebrow');
+      const panelTitle = document.getElementById('panelTitle');
+      const panelDescription = document.getElementById('panelDescription');
+      const panelList = document.getElementById('panelList');
+      const panelLinks = document.getElementById('panelLinks');
 
-      const profileCopy = {
-        recruiter: {
-          chip: 'Lead-focused view',
-          greeting: 'Hi, Piper',
-          summary: 'I design interactive kiosk experiences that guide visitors through your showroom—clear, engaging, and built to convert curiosity into consultations.',
-          highlight: 'Comfortable working independently on pilot projects. I think about user flows, lead capture, and making every touchpoint feel intentional and premium.'
+      const loadingSteps = [
+        {
+          title: 'Loading hireable captain...',
+          copy: 'Pulling together case studies, research instincts, and polished UI.'
         },
-        designer: {
-          chip: 'Designer lens',
-          greeting: 'Welcome, fellow designer',
-          summary: 'I work in Figma, think in user flows, and obsess over the details that make interfaces feel effortless. I move fast and iterate based on feedback.',
-          highlight: 'For this project, I\'ll design a complete system—not just screens, but the thinking behind every interaction. Ready to prototype, test, and refine.'
+        {
+          title: 'Checking map routes...',
+          copy: 'Routing through product design, physical experience work, and interactive storytelling.'
         },
-        explorer: {
-          chip: 'Play mode',
-          greeting: 'Let\'s explore',
-          summary: 'This portfolio is built like a product—every interaction has a purpose. Click around and see how small details compound into a polished experience.',
-          highlight: 'Same philosophy applies to your kiosk: thoughtful flows, premium feel, zero confusion. Designed for someone walking up cold and knowing exactly what to do.'
+        {
+          title: 'Launching portfolio world...',
+          copy: 'Final tip: if you like thoughtful interfaces with personality, hire me.'
+        }
+      ];
+
+      const islandContent = {
+        projects: {
+          eyebrow: 'Project Cove',
+          title: 'Work that solves real interface problems',
+          description:
+            'My favorite projects are the ones where the interface has to get out of the way fast and still feel polished.',
+          items: [
+            'EPA Mitigation Menu at UW-Madison: I redesigned a dense agricultural tool so farmers could scan options and make decisions faster on mobile.',
+            'Lunchbox social discovery: I built a calmer, clearer card-based experience focused on exploration without visual overload.',
+            'Kiosk and touch-first concepts: I like designing for moments when someone is standing, tapping quickly, and deciding in seconds.'
+          ],
+          links: [
+            { label: 'Email me', href: 'mailto:pbjmct@gmail.com' },
+            { label: 'LinkedIn', href: 'https://www.linkedin.com/in/pusti-jesrani' }
+          ]
+        },
+        about: {
+          eyebrow: 'About Isle',
+          title: 'A little more personal than a resume bullet list',
+          description:
+            'I care a lot about making interfaces feel easy the first time you touch them. That is probably why I keep gravitating toward kiosk ideas, product flows, and spaces where clarity really matters.',
+          items: [
+            'I studied computer sciences and design in practice, and I naturally think in systems, screens, and user flow.',
+            'My research mindset was shaped by work tied to SAHA Lab, where thinking carefully about information and decision-making mattered.',
+            'I like work that blends structure with personality instead of choosing one or the other.'
+          ],
+          links: [
+            { label: 'Say hello', href: 'mailto:pbjmct@gmail.com' }
+          ]
+        },
+        process: {
+          eyebrow: 'Process Point',
+          title: 'How I work when a project is messy',
+          description:
+            'I am at my best when a problem starts vague and needs shape. I usually begin by figuring out what the user is trying to do before I obsess over visuals.',
+          items: [
+            'I map the flow first, because if the path is confusing, no amount of styling saves it.',
+            'Then I tighten hierarchy, spacing, and interaction until the screen feels obvious and calm.',
+            'I like moving from rough idea to clickable prototype quickly so feedback can happen on something real.'
+          ],
+          links: [
+            { label: 'View LinkedIn', href: 'https://www.linkedin.com/in/pusti-jesrani' }
+          ]
+        },
+        play: {
+          eyebrow: 'Campus Key',
+          title: 'Leadership and energy I bring with me',
+          description:
+            'A lot of what makes me useful does not fit neatly into portfolio thumbnails. It shows up in how I work with people and how I keep momentum moving.',
+          items: [
+            'I have mentored more than 50 students, which taught me how to explain clearly and meet people where they are.',
+            'I have organized hackathons and high-energy events, so I am comfortable creating structure inside chaos.',
+            'That mix of patience and momentum shows up in my design work too.'
+          ],
+          links: []
+        },
+        contact: {
+          eyebrow: 'Hire Me Bay',
+          title: 'If this feels like your kind of designer, let’s talk',
+          description:
+            'I am looking for work where I can design clear, playful, thoughtful interfaces and keep growing as a product and UX/UI designer.',
+          items: [
+            'Email: pbjmct@gmail.com',
+            'LinkedIn: linkedin.com/in/pusti-jesrani',
+            'Strong fit: UX/UI, product design, kiosk concepts, and interactive digital experiences.'
+          ],
+          links: [
+            { label: 'Send email', href: 'mailto:pbjmct@gmail.com' },
+            { label: 'Open LinkedIn', href: 'https://www.linkedin.com/in/pusti-jesrani' }
+          ]
         }
       };
 
-      function applyProfile(profile) {
-        const copy = profileCopy[profile];
-        profileChip.textContent = copy.chip;
-        profileGreeting.textContent = copy.greeting;
-        heroSummary.textContent = copy.summary;
-        heroHighlight.textContent = copy.highlight;
+      const islandPositions = {
+        projects: { x: 22, y: 22 },
+        about: { x: 76, y: 23 },
+        process: { x: 49, y: 49 },
+        play: { x: 18, y: 75 },
+        contact: { x: 78, y: 76 }
+      };
+
+      const boatState = {
+        x: 49,
+        y: 89,
+        angle: 0,
+        speed: 0.3,
+        activeIsland: null,
+        autopilot: null
+      };
+
+      const controls = {
+        up: false,
+        down: false,
+        left: false,
+        right: false
+      };
+
+      let loadingTimer = null;
+
+      const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+      function renderBoat() {
+        boat.style.left = `${boatState.x}%`;
+        boat.style.top = `${boatState.y}%`;
+        boat.style.transform = `translate(-50%, -50%) rotate(${boatState.angle}deg)`;
       }
 
-      function openPortfolio(profile) {
-        applyProfile(profile);
-        localStorage.setItem('portfolioProfile', profile);
-        profileScreen.hidden = true;
-        mainPage.hidden = false;
+      function setStatus(message) {
+        statusText.textContent = message;
       }
 
-      const savedProfile = localStorage.getItem('portfolioProfile');
-      if (savedProfile && profileCopy[savedProfile]) {
-        openPortfolio(savedProfile);
-      }
+      function startLoadingSequence() {
+        startButton.disabled = true;
+        loadingPanel.classList.remove('hidden');
+        let stepIndex = 0;
 
-      profileButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-          openPortfolio(button.dataset.profile);
-        });
-      });
-
-      // Tenor embed fallback: if tenor iframe doesn't load, replace embed with a local fallback
-      const tenorWrapper = document.querySelector('.tenor-gif-embed');
-      if (tenorWrapper) {
-        setTimeout(() => {
-          // Tenor script usually injects an iframe; if none exists, use fallback
-          if (!tenorWrapper.querySelector('iframe')) {
-            const fallback = document.createElement('img');
-            fallback.src = 'assets/pixel-cat.gif';
-            fallback.alt = 'Penguin (fallback)';
-            fallback.style.width = '160px';
-            fallback.style.height = '160px';
-            fallback.style.objectFit = 'contain';
-            fallback.className = 'profile-penguin-fallback';
-            tenorWrapper.replaceWith(fallback);
+        function nextStep() {
+          const step = loadingSteps[stepIndex];
+          if (step) {
+            loadingTitle.textContent = step.title;
+            loadingCopy.textContent = step.copy;
+            loadingBarFill.style.width = `${((stepIndex + 1) / loadingSteps.length) * 100}%`;
+            stepIndex += 1;
+            loadingTimer = setTimeout(nextStep, 850);
+            return;
           }
-        }, 1200);
+
+          startScreen.classList.add('hidden');
+          page.classList.remove('hidden');
+          setStatus('Sail with WASD or arrow keys, or click an island to auto-route.');
+        }
+
+        nextStep();
       }
 
-      const projectCards = document.querySelectorAll('.project-card');
-      const projectCarousel = document.getElementById('projectCarousel');
-      const highlightCarousel = document.getElementById('highlightCarousel');
-      const carouselButtons = document.querySelectorAll('.carousel-nav__btn');
-      const modal = document.getElementById('projectModal');
-      const modalTitle = document.getElementById('modalTitle');
-      const modalSummary = document.getElementById('modalSummary');
-      const modalDetail = document.getElementById('modalDetail');
-      const modalTag = document.getElementById('modalTag');
-      const modalPreview = document.getElementById('modalPreview');
-      const closeModal = document.getElementById('closeModal');
+      function resetExperience() {
+        if (loadingTimer) {
+          clearTimeout(loadingTimer);
+          loadingTimer = null;
+        }
 
-      const gifModal = document.getElementById('gifModal');
-      const gifOverlay = document.getElementById('gifOverlay');
-      const closeGifModal = document.getElementById('closeGifModal');
-      const gifModalImg = document.getElementById('gifModalImg');
-
-      function getCardStep(carousel) {
-        const firstCard = carousel.querySelector('.project-card, .mini-card');
-        if (!firstCard) return 320;
-        return firstCard.getBoundingClientRect().width + 16;
+        boatState.x = 49;
+        boatState.y = 89;
+        boatState.angle = 0;
+        boatState.activeIsland = null;
+        boatState.autopilot = null;
+        controls.up = false;
+        controls.down = false;
+        controls.left = false;
+        controls.right = false;
+        renderBoat();
+        closePanel();
+        islands.forEach((island) => island.classList.remove('island--active'));
+        setStatus('Map reset. Pick a shore and sail in.');
       }
 
-      carouselButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-          const targetId = button.dataset.target;
-          const carousel = document.getElementById(targetId);
-          if (!carousel) return;
-          const direction = button.dataset.dir === 'next' ? 1 : -1;
-          carousel.scrollBy({ left: direction * getCardStep(carousel), behavior: 'smooth' });
+      function updatePanel(id) {
+        const content = islandContent[id];
+        if (!content) return;
+
+        panelEyebrow.textContent = content.eyebrow;
+        panelTitle.textContent = content.title;
+        panelDescription.textContent = content.description;
+        panelList.innerHTML = content.items
+          .map((item) => `<article class="detail-card"><p>${item}</p></article>`)
+          .join('');
+        panelLinks.innerHTML = content.links
+          .map(
+            (link) =>
+              `<a class="panel-link" href="${link.href}" target="_blank" rel="noreferrer">${link.label}</a>`
+          )
+          .join('');
+      }
+
+      function closePanel() {
+        panelEyebrow.textContent = 'Ready to sail';
+        panelTitle.textContent = 'Pick an island';
+        panelDescription.textContent =
+          'I made this feel like a game on purpose. It says more about how I think than another plain scrolling portfolio ever could.';
+        panelList.innerHTML = '';
+        panelLinks.innerHTML = '';
+      }
+
+      function highlightIsland(id) {
+        islands.forEach((island) => {
+          island.classList.toggle('island--active', island.dataset.island === id);
         });
-      });
+      }
 
-      function openProjectModal(card) {
-        modalTitle.textContent = card.dataset.title;
-        modalSummary.textContent = card.dataset.summary;
-        modalDetail.textContent = card.dataset.detail;
-        modalTag.textContent = card.dataset.tag;
-        // clone the front face node to avoid moving original DOM or duplicating ids
-        const front = card.querySelector('.project-card__face--front');
-        if (front) {
-          modalPreview.innerHTML = '';
-          const clone = front.cloneNode(true);
-          // remove any interactive ids that might conflict
-          clone.querySelectorAll('[id]').forEach((n) => n.removeAttribute('id'));
-          modalPreview.appendChild(clone);
+      function getNearestIsland() {
+        let nearest = null;
+        let shortest = Number.POSITIVE_INFINITY;
+
+        for (const [id, position] of Object.entries(islandPositions)) {
+          const dx = position.x - boatState.x;
+          const dy = position.y - boatState.y;
+          const distance = Math.hypot(dx, dy);
+          if (distance < shortest) {
+            shortest = distance;
+            nearest = { id, distance };
+          }
+        }
+
+        return nearest;
+      }
+
+      function dockAtIsland(id) {
+        if (!islandContent[id]) return;
+        boatState.activeIsland = id;
+        highlightIsland(id);
+        updatePanel(id);
+        setStatus(`Docked at ${islandContent[id].eyebrow}.`);
+      }
+
+      function setAutopilot(id) {
+        const destination = islandPositions[id];
+        if (!destination) return;
+        boatState.autopilot = { id, x: destination.x, y: destination.y };
+        setStatus(`Sailing to ${islandContent[id].eyebrow}...`);
+      }
+
+      function updateAutopilot() {
+        if (!boatState.autopilot) return;
+
+        const dx = boatState.autopilot.x - boatState.x;
+        const dy = boatState.autopilot.y - boatState.y;
+        const distance = Math.hypot(dx, dy);
+
+        if (distance < 0.8) {
+          boatState.x = boatState.autopilot.x;
+          boatState.y = boatState.autopilot.y;
+          const islandId = boatState.autopilot.id;
+          boatState.autopilot = null;
+          dockAtIsland(islandId);
+          renderBoat();
+          return;
+        }
+
+        const step = Math.min(boatState.speed * 1.45, distance);
+        boatState.x += (dx / distance) * step;
+        boatState.y += (dy / distance) * step;
+        boatState.angle = Math.atan2(dy, dx) * (180 / Math.PI) + 90;
+      }
+
+      function updateManualSailing() {
+        let dx = 0;
+        let dy = 0;
+
+        if (controls.up) dy -= 1;
+        if (controls.down) dy += 1;
+        if (controls.left) dx -= 1;
+        if (controls.right) dx += 1;
+
+        if (!dx && !dy) return;
+
+        boatState.autopilot = null;
+        boatState.activeIsland = null;
+        highlightIsland(null);
+
+        const length = Math.hypot(dx, dy) || 1;
+        const nextX = boatState.x + (dx / length) * boatState.speed;
+        const nextY = boatState.y + (dy / length) * boatState.speed;
+
+        boatState.x = clamp(nextX, 7, 93);
+        boatState.y = clamp(nextY, 10, 92);
+        boatState.angle = Math.atan2(dy, dx) * (180 / Math.PI) + 90;
+      }
+
+      function maybeDock() {
+        const nearest = getNearestIsland();
+        if (!nearest) return;
+
+        if (nearest.distance < 8.8) {
+          dockAtIsland(nearest.id);
         } else {
-          modalPreview.innerHTML = card.querySelector('.preview')?.innerHTML || '';
+          setStatus('Sail a little closer to shore to dock.');
         }
-        modal.hidden = false;
       }
 
-      // Delegated handler: clicking gifs inside modalPreview should open gif modal
-      modalPreview.addEventListener('click', (e) => {
-        const gif = e.target.closest('.preview__gif');
-        if (gif) {
-          gifModalImg.src = gif.src;
-          gifModal.hidden = false;
+      function tick() {
+        updateAutopilot();
+        updateManualSailing();
+        renderBoat();
+        requestAnimationFrame(tick);
+      }
+
+      function onKeyChange(event, isPressed) {
+        const key = event.key.toLowerCase();
+
+        if (page.classList.contains('hidden')) {
+          return;
         }
+
+        if (key === 'arrowup' || key === 'w') controls.up = isPressed;
+        if (key === 'arrowdown' || key === 's') controls.down = isPressed;
+        if (key === 'arrowleft' || key === 'a') controls.left = isPressed;
+        if (key === 'arrowright' || key === 'd') controls.right = isPressed;
+
+        if (['arrowup', 'arrowdown', 'arrowleft', 'arrowright', 'w', 'a', 's', 'd'].includes(key)) {
+          event.preventDefault();
+        }
+
+        if (isPressed && key === 'enter') {
+          maybeDock();
+        }
+
+        if (isPressed && key === 'escape') {
+          closePanel();
+          setStatus('Panel closed. Keep sailing.');
+        }
+      }
+
+      startButton.addEventListener('click', startLoadingSequence);
+      restartButton.addEventListener('click', resetExperience);
+      closePanelButton.addEventListener('click', () => {
+        closePanel();
+        setStatus('Panel closed. Sail to another island.');
       });
 
-      projectCards.forEach((card) => {
-        const gif = card.querySelector('.preview__gif');
-        const detailButton = card.querySelector('.project-card__detail-btn');
-        
-        if (gif) {
-          gif.addEventListener('click', (e) => {
-            e.stopPropagation();
-            gifModalImg.src = gif.src;
-            gifModal.hidden = false;
-          });
-        }
-
-        if (detailButton) {
-          detailButton.addEventListener('click', (event) => {
-            event.stopPropagation();
-            openProjectModal(card);
-          });
-        }
-
-        card.addEventListener('click', (event) => {
-          if (event.target.closest('.project-card__detail-btn')) return;
-          card.classList.toggle('is-flipped');
+      islands.forEach((island) => {
+        island.addEventListener('click', () => {
+          const id = island.dataset.island;
+          if (!id) return;
+          setAutopilot(id);
         });
-
-        card.addEventListener('keydown', (event) => {
-          if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            card.classList.toggle('is-flipped');
-          }
-        });
       });
 
-      function closeProjectModal() {
-        modal.hidden = true;
-      }
+      document.addEventListener('keydown', (event) => onKeyChange(event, true));
+      document.addEventListener('keyup', (event) => onKeyChange(event, false));
 
-      function closeGifPreview() {
-        gifModal.hidden = true;
-        gifModalImg.src = '';
-      }
-
-      closeModal.addEventListener('click', closeProjectModal);
-      modal.addEventListener('click', (event) => {
-        if (event.target === modal) {
-          closeProjectModal();
-        }
-      });
-
-      closeGifModal.addEventListener('click', closeGifPreview);
-      gifOverlay.addEventListener('click', closeGifPreview);
-      gifModal.addEventListener('click', (event) => {
-        if (event.target === gifModal || event.target === gifOverlay) {
-          closeGifPreview();
-        }
-      });
-
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-          if (!modal.hidden) {
-            closeProjectModal();
-          }
-          if (!gifModal.hidden) {
-            closeGifPreview();
-          }
-        }
-      });
+      renderBoat();
+      tick();
     </script>
   </body>
 </html>
