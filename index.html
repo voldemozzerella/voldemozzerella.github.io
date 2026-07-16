@@ -295,7 +295,8 @@
         angle: 0,
         speed: 0.3,
         activeIsland: null,
-        autopilot: null
+        autopilot: null,
+        lastDockedIsland: null
       };
 
       const controls = {
@@ -354,6 +355,7 @@
         boatState.angle = 0;
         boatState.activeIsland = null;
         boatState.autopilot = null;
+        boatState.lastDockedIsland = null;
         controls.up = false;
         controls.down = false;
         controls.left = false;
@@ -416,7 +418,9 @@
 
       function dockAtIsland(id) {
         if (!islandContent[id]) return;
+        if (boatState.lastDockedIsland === id && boatState.activeIsland === id) return;
         boatState.activeIsland = id;
+        boatState.lastDockedIsland = id;
         highlightIsland(id);
         updatePanel(id);
         setStatus(`Docked at ${islandContent[id].eyebrow}.`);
@@ -476,20 +480,24 @@
         boatState.angle = Math.atan2(dy, dx) * (180 / Math.PI) + 90;
       }
 
-      function maybeDock() {
+      function updateDockingZone() {
         const nearest = getNearestIsland();
         if (!nearest) return;
 
         if (nearest.distance < 8.8) {
           dockAtIsland(nearest.id);
-        } else {
-          setStatus('Sail a little closer to shore to dock.');
+          return;
+        }
+
+        if (nearest.distance > 11) {
+          boatState.lastDockedIsland = null;
         }
       }
 
       function tick() {
         updateAutopilot();
         updateManualSailing();
+        updateDockingZone();
         renderBoat();
         requestAnimationFrame(tick);
       }
@@ -508,10 +516,6 @@
 
         if (['arrowup', 'arrowdown', 'arrowleft', 'arrowright', 'w', 'a', 's', 'd'].includes(key)) {
           event.preventDefault();
-        }
-
-        if (isPressed && key === 'enter') {
-          maybeDock();
         }
 
         if (isPressed && key === 'escape') {
